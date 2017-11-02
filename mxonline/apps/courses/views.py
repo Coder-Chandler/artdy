@@ -108,7 +108,7 @@ class CommentView(View):
     def get(self, request, course_id):
         course = Course.objects.get(id=int(course_id))
         all_resources = CourseResource.objects.filter(course=course)
-        all_comment = CourseComments.objects.all()
+        all_comment = CourseComments.objects.filter(course=course)
         return render(request, 'course-comment.html', {
             'course': course,
             'all_resources': all_resources,
@@ -124,9 +124,9 @@ class AddCommentView(View):
         if not request.user.is_authenticated():
             # 判断用户登录状态
             return HttpResponse('{"status":"fail", "msg":"用户未登录"}', content_type='application/json')
-        course_id = request.POST.get('course_id', 0)
+        course_id = int(request.POST.get('course_id', 0))
         comments = request.POST.get('comments', '')
-        if course_id > 0 and comments:
+        if comments != '' and course_id > 0:
             course_comments = CourseComments()
             course = Course.objects.get(id=int(course_id))
             course_comments.course = course

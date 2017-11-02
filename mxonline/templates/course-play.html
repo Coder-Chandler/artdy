@@ -8,7 +8,7 @@
                     <ul>
                         <li><a href="index.html">首页</a>></li>
                         <li><a href="{% url 'course:course_list' %}">公开课程</a>></li>
-                        <li><a href="{% url 'course:course_detail' course.id %}">>{{ course.name }}</a></li>
+                        <li><a href="{% url 'course:course_detail' course.id %}">{{ course.name }}</a></li>
                         <li>>{{ video.name }}</li>
                     </ul>
                 </div>
@@ -82,31 +82,31 @@
 
             </div>
             <div class="aside r">
-                <div class="bd">
+                    <div class="bd">
 
-                    <div class="box mb40">
+                        <div class="box mb40">
                         <h4>资料下载</h4>
                         <ul class="downlist">
-                            {% for course_resource in all_resources %}
-                            <li>
-                                <span ><i class="aui-iconfont aui-icon-file"></i>&nbsp;&nbsp;{{ course_resource.name }}</span>
-                                <a href="{{ MEDIA_URL }}{{ course_resource.download }}" class="downcode" target="_blank" download="" data-id="274" title="">下载</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
+                                {% for course_resource in all_resources %}
+                                <li>
+                                    <span ><i class="aui-iconfont aui-icon-file"></i>&nbsp;&nbsp;{{ course_resource.name }}</span>
+                                    <a href="{{ MEDIA_URL }}{{ course_resource.download }}" class="downcode" target="_blank" download="" data-id="274" title="">下载</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
                     </div>
-                    <div class="box mb40">
+                        <div class="box mb40">
                         <h4>讲师提示</h4>
                         <div class="teacher-info">
                             <a href="{% url 'org:teacher_detail' course.teacher.id %}" target="_blank">
                                 <img src='{{ MEDIA_URL }}{{ course.teacher.image }}' width='80' height='80' />
                             </a>
                             <span class="tit">
-                              <a href="{% url 'org:teacher_detail' teacher.id %}" target="_blank">{{ course.teacher.name }}</a>
+                              <a href="{% url 'org:teacher_detail' course.teacher.id %}" target="_blank">{{ course.teacher.name }}</a>
                             </span>
                             <span class="job">{{ course.teacher.work_position }}</span>
                         </div>
-                        <div class="course-info-tip">
+                       <div class="course-info-tip">
                             <dl class="first">
                                 <dt>课程须知</dt>
                                 <dd class="autowrap">{{ course.need_know }}}</dd>
@@ -119,7 +119,7 @@
                     </div>
 
 
-                    <div class="cp-other-learned  js-comp-tabs">
+                        <div class="cp-other-learned  js-comp-tabs">
                         <div class="cp-header clearfix">
                             <h2 class="cp-tit l">该课的同学还学过</h2>
                         </div>
@@ -142,8 +142,8 @@
                                 <ul class="other-list">
                                     <li class="curr">
                                         <a href="/course/programdetail/pid/31?src=sug" target="_blank">
-                                            <img src="http://img.mukewang.com/56551e6700018b0c09600720-240-135.jpg" alt="Java工程师">
-                                            <span class="name autowrap">Java工程师</span>
+                                            <img src="" alt="">
+                                            <span class="name autowrap"></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
 
-                </div>    </div>
+                    </div>    </div>
         </div>
         <div class="clear"></div>
 

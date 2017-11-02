@@ -44,37 +44,37 @@
     </form>
 </div>
 <div class="bg" id="dialogBg"></div>
-<header>
-    <div class="c-box fff-box">
-        <div class="wp header-box">
-            <p class="fl hd-tips">DAYUart，在线学习平台！</p>
-            <ul class="fr hd-bar">
-                <li>服务电话：<span>33333333</span></li>
-                <li><a href="{% url 'login' %}">[登录]</a></li>
-                <li class="active"><a href="{% url 'forget_pwd' %}">[忘记密码]</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+{#<header>#}
+{#    <div class="c-box fff-box">#}
+{#        <div class="wp header-box">#}
+{#            <p class="fl hd-tips">DAYUart，在线学习平台！</p>#}
+{#            <ul class="fr hd-bar">#}
+{#                <li>服务电话：<span>33333333</span></li>#}
+{#                <li><a href="{% url 'login' %}">[登录]</a></li>#}
+{#                <li class="active"><a href="{% url 'forget_pwd' %}">[忘记密码]</a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</header>#}
 <section>
     <div class="c-box bg-box">
         <div class="login-box clearfix">
             <div class="hd-login clearfix">
                 <a class="index-logo" href="{% url 'index' %}"></a>
-                <h1>忘记密码</h1>
-                <a class="index-font" href="{% url 'index' %}">回到首页</a>
+{#                <h1>忘记密码</h1>#}
+{#                <a class="index-font" href="{% url 'index' %}">回到首页</a>#}
             </div>
-            <div class="fl slide">
-                <div class="imgslide">
-                    <ul class="imgs">
-                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>
-                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>
-                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>
-                    </ul>
-                </div>
-                <div class="unslider-arrow prev"></div>
-                <div class="unslider-arrow next"></div>
-            </div>
+{#            <div class="fl slide">#}
+{#                <div class="imgslide">#}
+{#                    <ul class="imgs">#}
+{#                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>#}
+{#                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>#}
+{#                        <li><a href=""><img width="483" height="472" src="{% static 'images/57a801860001c34b12000460.jpg' %}" /></a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#                <div class="unslider-arrow prev"></div>#}
+{#                <div class="unslider-arrow next"></div>#}
+{#            </div>#}
             <div class="fl form-box">
                 <h2>忘记密码</h2>
                 <form id="jsFindPwdForm" method="post" action="{% url 'forget_pwd' %}" autocomplete="off">
@@ -89,7 +89,13 @@
                     <div class="error btns" id="jsForgetTips"></div>
                     <input type="hidden" name="sms_type" value="1">
                     <input class="btn btn-green" id="jsFindPwdBtn" type="submit" value="提交" />
-                    <p class="form-p" style="bottom:40px;">您还可以<a href="{% url 'login' %}"> [直接登录]</a></p>
+                    <p class="form-p" style="bottom:40px;">
+                        您还可以
+                        <a href="{% url 'login' %}"> [直接登录]</a>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        回到首页
+                        <a href="{% url 'index' %}">[回到首页]</a>
+                    </p>
                 {% csrf_token %}
                 </form>
             </div>
